@@ -1,2 +1,2 @@
 # Sudoku-and-SAT
-dd
+Project for CSC 320 with Professor Bruce Kapron
