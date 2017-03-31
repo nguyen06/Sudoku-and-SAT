@@ -9,17 +9,17 @@ for i in range(1,10):
 
 
 for i in range(1, 10):
-	for j in range(1, 10):
-		for k in range(1,9):
-			for l in range(j+1, 9):
+	for k in range(1, 10):
+		for j in range(1,9):
+			for l in range(j+1, 10):
 				x = -100 * i - 10 * j - k
 				y =  -100 * i - 10 * l - k
 				f.write(str(x) + " " + str(y) + " 0\n")
 
-for i in range(1, 10):
-	for j in range(1, 10):
-		for k in range(1,9):
-			for l in range(j+1, 9):
+for j in range(1, 10):
+	for k in range(1, 10):
+		for i in range(1,9):
+			for l in range(i+1, 10):
 				x = -100 * i - 10 * j - k
 				y =  -100 * l - 10 * j - k
 				f.write(str(x) + " " + str(y) + " 0\n")
@@ -55,9 +55,9 @@ while True:
 	if ch == '\n': continue
 	puzzle.append(ch)
 	if not ch: break
-	
-
-
+puzzle.pop()	
+print len(puzzle)
+##
 for i in range(0, 9):
 	for j in range(0, 9):
 		index = i*9 + j
