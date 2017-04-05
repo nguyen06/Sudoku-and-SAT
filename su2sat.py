@@ -1,3 +1,4 @@
+
 import os
 import sys
 
@@ -23,39 +24,18 @@ CNF_file = open("cnf_format.cnf", 'w')
 
 """
 	read the puzzle input and convert to (i,j,k) format
+
 	i: the line number
 	j: the column number
 	k: the value at (i,j)
+
 	only read when the value of at (i,j) is not ('0','?','.','*')
 """
 def getInput(filename):
 	
 	line_num = 0
 	with open(filename) as f:
-		line = f.readline()
-
-		i = 0
-		j = 0
-		k = 0
-		counter = 0
-		for ch in line:
-
-			inListFlag = False
-			if ch not in excepted_list:
-				k = int(ch)
-				inListFlag = True
-			if (counter % 9 == 0):
-				i += 1
-			j += 1
-			if (j > 9):
-				j = 1
-			counter += 1
-			if inListFlag:
-				tempObject = element(i, j, k)
-				#print("hell0")
-				sudoku_list_element.append(tempObject)
-
-		"""for line in f:
+		for line in f:
 			line_num += 1
 			column_num = 0
 			for ch in line:
@@ -67,7 +47,7 @@ def getInput(filename):
 					sudoku_list_element.append(tempObject)
 				if ch  == "\n":
 					column_num = 0
-				"""	
+				
 					
 
 #just for testing
@@ -81,7 +61,9 @@ def test(mylist):
 """
 	now we conver these (i,j,k) into the Conjunctive Normal Form (CNF)
 	using the formular given in class
+
 	(i,j,k) -> 81*(i-1) + 9*(j-1) +1
+
 	the result will be write to CNF file
 """
 def convert_to_CNF(list_element):
@@ -313,9 +295,8 @@ def copy_old_file_to_new_file():
 if __name__ == '__main__':
 
 		#get the input from the puzzel file
-		
+			
 		getInput(sys.argv[1])
-		
 		convert_to_CNF(sudoku_list_element)
 		#test(sudoku_list_element)
 		
@@ -346,3 +327,8 @@ if __name__ == '__main__':
 
 		count_variables_and_clauses()
 		copy_old_file_to_new_file()
+
+
+
+		#os.system('minisat cnf_format.cnf outputFile.cnf')
+		
