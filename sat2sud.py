@@ -1,5 +1,5 @@
 import sys
-
+#create lists 
 list_variable = []
 list_result = []
 file_out = open(sys.argv[1],'w')
