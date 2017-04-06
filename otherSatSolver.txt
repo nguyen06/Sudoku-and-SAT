@@ -1,0 +1,32 @@
+We used another SAT Solver in our project. We did this to learn how to operate another SAT Solver that would run on Mac OS X so we did not have to install Ubuntu on every machine we worked on the project with.
+
+We did this by using the SAT Solver Glucose. Avaliable at http://www.labri.fr/perso/lsimon/glucose/
+
+After compiling glucose, we were able to input the same sud2 file created by our sud2sat file.
+This was done with the following shell command.
+./glucose-syrup sud2 -model
+
+Then we were able to view the DIMACS output of the SAT Solver which could then be loaded into sat2sud to view a completed puzzle.
+
+This experience taught us that DIMACS is a format that is not specific to minisat and is employed by other SAT Solvers. It also gave us more experience compiling software tools from source.
+
+Glucose used less memory and computational time compared to minisat.
+
+GLUCOSE:
+Total Memory so far : 3.98Mb
+
+real time : 0.0174239 s
+cpu time  : 0.014103 s
+
+MINISAT: 
+//TODO: DATA TO BE PLACED HERE
+
+
+This is probably because glucose was last updated in 2016 and minisat was last updated in 2012 at the absolute latest. So more recent developments have been placed in glucose.
+Glucose is also a derivative of minisat and in general is seen as an overall improvement.
+
+On top of this we used a version of minisat that was ported to javascript.
+https://www.msoos.org/2013/09/minisat-in-your-browser/
+We found the performance and reliability of this software was not up to par with the official version of minisat nor glucose's version.
+
+Overall we were unable to find many publically avaliable SAT Solvers, but we were very impressed by Glucose.
